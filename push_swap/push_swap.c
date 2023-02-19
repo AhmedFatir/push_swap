@@ -6,7 +6,7 @@
 /*   By: afatir <afatir@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/11 18:16:01 by afatir            #+#    #+#             */
-/*   Updated: 2023/02/19 08:37:14 by afatir           ###   ########.fr       */
+/*   Updated: 2023/02/19 09:35:01 by afatir           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ int	main(int ac, char **av)
 	int		i;
 	int		*ar;
 	t_stack	*a;
-	t_stack	*b;
+	// t_stack	*b;
 
 	i = 0;
 	if (ac <= 1)
@@ -41,6 +41,6 @@ int	main(int ac, char **av)
 	if (!is_sort_check(a))
 		exit(1);
 	i = (ft_strlen_stack(a) / 2);
-	ft_pushb(a, b, j);
+	// ft_pushb(a, b, j);
 	return (0);
 }
