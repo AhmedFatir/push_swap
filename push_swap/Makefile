@@ -6,7 +6,7 @@
 #    By: afatir <afatir@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/02/11 18:13:38 by afatir            #+#    #+#              #
-#    Updated: 2023/02/19 05:05:53 by afatir           ###   ########.fr        #
+#    Updated: 2023/02/24 11:37:12 by afatir           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -18,8 +18,8 @@ CFLAGS	= -Wall -Werror -Wextra
 CC		= cc
 MOBJS	= ${SRCS:%.c=object/%.o}
 BOBJS	= ${SRCS_B:%.c=object/%.o}
-SRCS	= push_swap.c check1.c linked_list.c fill_index.c
-SRCS_B	= bonus/push_swap_b.c 
+SRCS	= push_swap.c check1.c linked_list.c fill_index.c instuctions.c pos.c
+SRCS_B	= bonus/checker.c bonus/check1_b.c bonus/linked_list_b.c bonus/fill_index_b.c bonus/instuctions_b.c
 
 
 all :		$(NAME)
@@ -27,7 +27,7 @@ all :		$(NAME)
 
 $(NAME) :	$(MOBJS)
 			@make -s -C $(LIB_FT)
-			$(CC) $(CFLAGS) $(LIB_FT_A) $(MOBJS) -o $(NAME)
+			@$(CC) $(CFLAGS) $(LIB_FT_A) $(MOBJS) -o $(NAME)
 
 bonus:		$(BNAME)
 			@make -C $(LIB_FT)
