@@ -6,7 +6,7 @@
 /*   By: afatir <afatir@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/15 22:14:02 by afatir            #+#    #+#             */
-/*   Updated: 2023/02/17 04:37:03 by afatir           ###   ########.fr       */
+/*   Updated: 2023/02/27 09:56:13 by afatir           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,6 +56,7 @@ void	ft_putchar_fd(char c, int fd);
 void	ft_putstr_fd(char *s, int fd);
 void	ft_putendl_fd(char *s, int fd);
 void	ft_putnbr_fd(int n, int fd);
+int		ft_strcmp(const char *s1, const char *s2);
 // gnl
 char	**ft_free_all(char **p);
 size_t	ft_checkc(char *s, int c);

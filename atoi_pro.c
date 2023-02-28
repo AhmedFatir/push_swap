@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   check1.c                                           :+:      :+:    :+:   */
+/*   atoi_pro.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: afatir <afatir@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/17 01:45:23 by afatir            #+#    #+#             */
-/*   Updated: 2023/02/19 23:20:21 by afatir           ###   ########.fr       */
+/*   Updated: 2023/02/27 13:34:42 by afatir           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ int	ft_atoi_zero(char *p)
 	return (1);
 }
 
-int	ft_atoi_pro(char **p)
+int	ft_atoi_pro(char **p, int *r)
 {
 	int		i;
 	int		j;
@@ -55,6 +55,7 @@ int	ft_atoi_pro(char **p)
 		}
 		i++;
 	}
+	*r = i;
 	return (1);
 }
 
@@ -96,6 +97,8 @@ char	**ft_check1(int ac, char **av)
 	int		i;
 
 	i = 1;
+	if (ac <= 1)
+		exit(1);
 	if (!ft_check2(av))
 	{
 		ft_printf("Error\n");

@@ -6,7 +6,7 @@
 /*   By: afatir <afatir@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/19 01:25:27 by afatir            #+#    #+#             */
-/*   Updated: 2023/02/23 06:14:45 by afatir           ###   ########.fr       */
+/*   Updated: 2023/02/24 20:48:47 by afatir           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,6 +50,7 @@ void	ft_add_front(t_stack **a, t_stack *n)
 		*a = n;
 	}
 }
+
 int	ft_strlen_stack(t_stack **a)
 {
 	t_stack	*tmp;
@@ -65,17 +66,18 @@ int	ft_strlen_stack(t_stack **a)
 	return (ln);
 }
 
-t_stack *ft_end_stack(t_stack *s)
+t_stack	*ft_end_stack(t_stack *s)
 {
-	t_stack *t;
-	if(s)
+	t_stack		*t;
+
+	if (s)
 	{
 		t = s;
 		while (s->next->next != NULL)
 			s = s->next;
 		t = s->next;
 		s->next = NULL;
-		return(t);
+		return (t);
 	}
-	return NULL;
+	return (NULL);
 }

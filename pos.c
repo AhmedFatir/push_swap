@@ -6,7 +6,7 @@
 /*   By: afatir <afatir@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/21 23:00:10 by afatir            #+#    #+#             */
-/*   Updated: 2023/02/24 16:10:59 by afatir           ###   ########.fr       */
+/*   Updated: 2023/02/25 17:47:51 by afatir           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ int	ft_position(t_stack **b)
 				tmp = tb;
 			tb = tb->next;
 		}
-		return(tmp->pos);
+		return (tmp->pos);
 	}
 	return (0);
 }
@@ -39,18 +39,18 @@ void	ft_push_a_to_b(t_stack **a, t_stack **b, int range)
 	int		i;
 
 	i = 0;
-	if (range > 250)
+	if (range > 100)
 		range = 42;
 	else
 		range = 15;
 	while (ft_strlen_stack(a))
 	{
-		if ((*a)->index < i)
+		if ((*a)->index <= i)
 		{
 			ft_push(a, b, "pb");
 			i++;
 		}
-		else if((*a)->index <= i + range)
+		else if ((*a)->index <= i + range)
 		{
 			ft_push(a, b, "pb");
 			ft_rot(b, "rb");
@@ -60,6 +60,7 @@ void	ft_push_a_to_b(t_stack **a, t_stack **b, int range)
 			ft_rot(a, "ra");
 	}
 }
+
 void	ft_bush_b_to_a(t_stack **a, t_stack **b)
 {
 	int		pm;
@@ -70,9 +71,9 @@ void	ft_bush_b_to_a(t_stack **a, t_stack **b)
 		m_p(b);
 		pm = ft_position(b);
 		ln = ft_strlen_stack(b);
-		if(pm < ln / 2)
+		if (pm < ln / 2)
 		{
-			while (pm--)
+			while (--pm)
 				ft_rot(b, "rb");
 			ft_push(b, a, "pa");
 		}
@@ -85,6 +86,7 @@ void	ft_bush_b_to_a(t_stack **a, t_stack **b)
 		}
 	}
 }
+
 void	m_p(t_stack **b)
 {
 	t_stack	*tmp;
@@ -100,6 +102,5 @@ void	m_p(t_stack **b)
 			tmp = tmp->next;
 			max++;
 		}
-		
 	}
 }

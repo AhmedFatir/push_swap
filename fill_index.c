@@ -6,7 +6,7 @@
 /*   By: afatir <afatir@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/19 03:35:09 by afatir            #+#    #+#             */
-/*   Updated: 2023/02/22 01:29:52 by afatir           ###   ########.fr       */
+/*   Updated: 2023/02/27 17:50:36 by afatir           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,6 +47,7 @@ int	*ft_fill(char **p, int i)
 		j++;
 	}
 	ar[j] = 0;
+	ft_free_all(p);
 	return (ar);
 }
 
@@ -65,6 +66,9 @@ t_stack	*ft_pusha(int *ar, int i)
 		ft_add_end(&a, tmp);
 		j++;
 	}
+	free(ar);
+	index_a(&a);
+	ft_position(&a);
 	return (a);
 }
 
@@ -95,10 +99,12 @@ void	index_a(t_stack **a)
 	}
 }
 
-int	is_sort_check(t_stack *a)
+void	is_sort_check(t_stack *a)
 {
 	t_stack	*tmp;
+	int		i;
 
+	i = 0;
 	if (a && a->next)
 	{
 		while (a->next)
@@ -106,8 +112,12 @@ int	is_sort_check(t_stack *a)
 			tmp = a;
 			a = a->next;
 			if (tmp->data > a->data)
-				return (1);
+				i++;
 		}
 	}
-	return (0);
+	if (i == 0)
+	{
+		free_list(a);
+		exit(1);
+	}
 }
