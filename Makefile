@@ -6,7 +6,7 @@
 #    By: afatir <afatir@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/02/11 18:13:38 by afatir            #+#    #+#              #
-#    Updated: 2023/02/27 12:27:09 by afatir           ###   ########.fr        #
+#    Updated: 2023/03/02 14:08:37 by afatir           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,9 +16,9 @@ LIB_FT	= ./libft_gcl_ptf/
 LIB_FT_A= ./libft_gcl_ptf/libft_gcl_ptf.a
 CFLAGS	= -Wall -Werror -Wextra
 CC		= cc
-MOBJS	= ${SRCS:%.c=object/%.o}
-BOBJS	= ${SRCS_B:%.c=object/%.o}
-SRCS	= push_swap.c atoi_pro.c linked_list.c fill_index.c instuctions.c pos.c sort_s.c
+MOBJS	= ${SRCS:%.c=%.o}
+BOBJS	= ${SRCS_B:%.c=%.o}
+SRCS	= src/push_swap.c src/atoi_pro.c src/linked_list.c src/fill_index.c src/instuctions.c src/pos.c src/sort_s.c
 SRCS_B	= bonus/checker.c bonus/atoi_pro_b.c bonus/linked_list_b.c bonus/fill_index_b.c bonus/instuctions_b.c bonus/pos_b.c
 
 
@@ -26,20 +26,17 @@ all :		$(NAME)
 			@make -C $(LIB_FT)
 
 $(NAME) :	$(MOBJS)
-			@make -s -C $(LIB_FT)
+			@make -C $(LIB_FT)
 			@$(CC) $(CFLAGS) $(LIB_FT_A) $(MOBJS) -o $(NAME)
 
 bonus:		$(BNAME)
 			@make -C $(LIB_FT)
 
 $(BNAME):	$(BOBJS)
-			@make -s -C $(LIB_FT)
+			@make -C $(LIB_FT)
 			@$(CC) $(CFLAGS) $(LIB_FT_A) $(BOBJS) -o $(BNAME)
 
-object/%.o:	%.c	push_swap.h
-			$(CC) $(CFLAGS)  -c $< -o $@
-
-object/%.o: %.c	bonus/push_swap_bonus.h
+%.o:	%.c	push_swap.h bonus/push_swap_bonus.h
 			$(CC) $(CFLAGS)  -c $< -o $@
 
 clean:

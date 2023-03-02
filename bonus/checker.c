@@ -6,7 +6,7 @@
 /*   By: afatir <afatir@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/11 18:16:01 by afatir            #+#    #+#             */
-/*   Updated: 2023/02/28 22:15:57 by afatir           ###   ########.fr       */
+/*   Updated: 2023/03/02 14:09:36 by afatir           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,12 +48,6 @@ void	checker(t_stack **a, t_stack **b)
 		ft_printf("OK\n");
 	else
 		ft_printf("KO\n");
-}
-
-void	v(void)
-{
-	system("leaks checker");
-	atexit(v);
 }
 
 int	main(int ac, char **av)

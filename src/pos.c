@@ -6,7 +6,7 @@
 /*   By: afatir <afatir@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/21 23:00:10 by afatir            #+#    #+#             */
-/*   Updated: 2023/02/25 17:47:51 by afatir           ###   ########.fr       */
+/*   Updated: 2023/03/02 11:35:00 by afatir           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -103,4 +103,26 @@ void	m_p(t_stack **b)
 			max++;
 		}
 	}
+}
+
+int	mp2(t_stack **a)
+{
+	t_stack	*tmp;
+	t_stack	*tb;
+	int		i;
+
+	if (a && *a)
+	{
+		i = 1;
+		tb = *a;
+		tmp = *a;
+		while (tb)
+		{
+			if (tb->index < tmp->index)
+				tmp = tb;
+			tb = tb->next;
+		}
+		return (tmp->pos);
+	}
+	return (0);
 }

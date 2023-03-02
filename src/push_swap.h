@@ -6,14 +6,14 @@
 /*   By: afatir <afatir@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/11 18:17:27 by afatir            #+#    #+#             */
-/*   Updated: 2023/02/27 13:55:05 by afatir           ###   ########.fr       */
+/*   Updated: 2023/03/02 14:08:51 by afatir           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef PUSH_SWAP_H
 # define PUSH_SWAP_H
 
-# include "libft_gcl_ptf/libft.h"
+# include "../libft_gcl_ptf/libft.h"
 # include <unistd.h>
 # include <stdlib.h>
 # include <stdio.h>
@@ -58,10 +58,12 @@ int		ft_position(t_stack **b);
 void	ft_push_a_to_b(t_stack **a, t_stack **b, int range);
 void	ft_bush_b_to_a(t_stack **a, t_stack **b);
 void	m_p(t_stack **b);
+int		mp2(t_stack **a);
 // sort_s.c
 void	ft_sort_s(t_stack **a, t_stack **b);
 void	sort_t(t_stack **s);
-int		mp2(t_stack **a);
 void	sort_f(t_stack **a, t_stack **b);
 void	sort_f2(t_stack **a, t_stack **b, int mp);
+void	sort_four(t_stack **a, t_stack **b);
+// sort_s2.c
 #endif

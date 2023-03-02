@@ -6,7 +6,7 @@
 /*   By: afatir <afatir@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/25 09:40:58 by afatir            #+#    #+#             */
-/*   Updated: 2023/02/25 17:00:04 by afatir           ###   ########.fr       */
+/*   Updated: 2023/03/02 10:31:14 by afatir           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,8 @@ void	ft_sort_s(t_stack **a, t_stack **b)
 		ft_swap(a, "sa");
 	else if (ft_strlen_stack(a) == 3)
 		sort_t(a);
+	else if (ft_strlen_stack(a) == 4)
+		sort_four(a, b);
 	else if (ft_strlen_stack(a) == 5)
 		sort_f(a, b);
 }
@@ -95,24 +97,30 @@ void	sort_f2(t_stack **a, t_stack **b, int mp)
 	}
 }
 
-int	mp2(t_stack **a)
+void	sort_four(t_stack **a, t_stack **b)
 {
-	t_stack	*tmp;
-	t_stack	*tb;
-	int		i;
+	int		mp;
 
-	if (a && *a)
+	m_p(a);
+	mp = mp2(a);
+	if (mp == 1)
+		ft_push(a, b, "pb");
+	else if (mp == 2)
 	{
-		i = 1;
-		tb = *a;
-		tmp = *a;
-		while (tb)
-		{
-			if (tb->index < tmp->index)
-				tmp = tb;
-			tb = tb->next;
-		}
-		return (tmp->pos);
+		ft_swap(a, "sa");
+		ft_push(a, b, "pb");
 	}
-	return (0);
+	else if (mp == 3)
+	{
+		ft_rot(a, "ra");
+		ft_swap(a, "sa");
+		ft_push(a, b, "pb");
+	}
+	else if (mp == 4)
+	{
+		ft_revrot(a, "rra");
+		ft_push(a, b, "pb");
+	}
+	sort_t(a);
+	ft_push(b, a, "pa");
 }

@@ -6,7 +6,7 @@
 /*   By: afatir <afatir@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/11 18:16:01 by afatir            #+#    #+#             */
-/*   Updated: 2023/02/27 17:44:01 by afatir           ###   ########.fr       */
+/*   Updated: 2023/03/02 14:09:27 by afatir           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,11 +35,6 @@ void	ft_push_swap(t_stack **a, t_stack **b, int r)
 	ft_bush_b_to_a(a, b);
 }
 
-void	v(void)
-{
-	system("leaks push_swap");
-}
-
 int	main(int ac, char **av)
 {
 	char	**p;
@@ -59,7 +54,7 @@ int	main(int ac, char **av)
 	a = ft_pusha(ar, r);
 	is_sort_check(a);
 	r = ft_strlen_stack(&a);
-	if (r == 5 || r == 3 || r == 2)
+	if (r <= 5)
 		ft_sort_s(&a, &b);
 	else
 		ft_push_swap(&a, &b, r);
