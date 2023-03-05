@@ -6,13 +6,13 @@
 /*   By: afatir <afatir@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/20 00:36:41 by afatir            #+#    #+#             */
-/*   Updated: 2023/02/27 12:38:47 by afatir           ###   ########.fr       */
+/*   Updated: 2023/03/05 19:26:39 by afatir           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap_bonus.h"
 
-void	ft_swap_b(t_stack **stack)
+void	ft_swap_b(t_stack **stack && *(stack)->next)
 {
 	t_stack	*tmp;
 	t_stack	*tmp1;
