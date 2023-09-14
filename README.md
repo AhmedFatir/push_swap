@@ -11,6 +11,7 @@ To use the push_swap program, follow these steps:
 
 Run the program with a list of integers that need to be sorted: ./push_swap [list]
 The program will output a list of instructions that need to be performed on the two stacks in order to sort the integers.
+
 Note: The program uses two stacks to sort the integers, which are represented as linked lists in the program. 
 The available operations on the stacks are sa, sb, ss, pa, pb, ra, rb, rr, rra, rrb, and rrr. 
 The goal is to sort the integers using the minimum number of operations.
