@@ -1,19 +1,12 @@
 # push_swap
 This is my implementation of the push_swap project from 42 school.
 
-Description
+Description: 
+
 Push_Swap is a sorting algorithm that sorts a stack of integers using only two stacks and a set of predefined operations. 
 The goal of the project is to implement the algorithm in the most efficient way possible, using the minimum number of operations.
 
-Installation
-To install and run the push_swap program, follow these steps:
-
-Clone the repository: git clone
-Build the program executable: make
-Run the program with a list of integers: ./push_swap [list]
-Note: The list argument in step 4 is a space-separated list of integers that need to be sorted.
-
-Usage
+Usage : 
 To use the push_swap program, follow these steps:
 
 Run the program with a list of integers that need to be sorted: ./push_swap [list]
